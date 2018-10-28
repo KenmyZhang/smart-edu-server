@@ -1,0 +1,53 @@
+{
+    "LogSettings": {
+        "EnableConsole": true,
+        "ConsoleLevel": "DEBUG",
+        "ConsoleJson": true,
+        "EnableFile": true,
+        "FileLevel": "DEBUG",
+        "FileJson": true,
+        "FileLocation": "./logs",
+        "MaxSize": 100,
+        "Compress": true,
+        "MaxBackups": 30,
+        "MaxAge":365,
+        "LocalTime": true
+    },
+    "RedisSettings": {
+        "Addr":"127.0.0.1:6379",
+        "Password":"",
+        "DialTimeout": 5,
+        "ReadTimeout": 3,
+        "WriteTimeout": 3,
+        "PoolSize": 30,
+        "PoolTimeOut": 3,
+        "DB": 0
+    },
+    "OfflineSpaceSettings":{
+        "Url": "http://api.zone.lixian.vip.xunlei.com/tasks/"
+    },
+    "WexinSettings":{
+       "AppId":"wxfeb0377e15a821b8",
+       "AppSecret":"422c01c419a1488783b664cdb4f097d6"
+    },
+    "SentrySettings": {
+        "SentryDsn": "http://acbd9baaa84f4bc2b6f29857f3250b54:f8486b988dd64498812c8a4798f3b021@127.0.0.1:9000/2",
+        "SentryLog": "./logs/sentry.log"
+    },
+    "ServiceSettings":{
+        "ListenAddress":"0.0.0.0:8089",
+	    "ReadTimeout": 300,
+	    "WriteTimeout": 300
+    },
+    "ReleaseMode":false,
+    "SqlSettings": {
+        "DriverName": "mysql",
+        "DataSource": "root:123456@tcp(127.0.0.1)/smart-edu-server?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s",
+        "DataSourceReplicas": [],
+        "DataSourceSearchReplicas": [],
+        "MaxIdleConns": 20,
+        "MaxOpenConns": 300,
+        "Trace": true,
+        "QueryTimeout": 30
+    }
+}
