@@ -7,25 +7,27 @@ import (
 )
 
 type User struct {
-	Id        string `json:"id"`
-	Username  string `json:"username"`
-	Role      string `json:"role"`
-	Location  string `json:"location"`
-	Email     string `json:"email"`
-	Mobile    string `json:"mobile"`
-	UnionId   string `json:"union_id"`
-	CreatedAt int64  `json:"created_at"`
-	DeletedAt int64  `json:"created_at"`
-	UpdatedAt int64  `json:"updated_at"`
+	Id          string `json:"id"`
+	Username    string `json:"username"`
+	Role        string `json:"role"`
+	Location    string `json:"location"`
+	Email       string `json:"email"`
+	Mobile      string `json:"mobile"`
+	UnionId     string `json:"union_id"`
+	Description string `json:"description"`
+	CreatedTime int64  `json:"created_time"`
+	DeletedTime int64  `json:"deleted_time"`
+	UpdatedTime int64  `json:"updated_time"`
 }
 
 func (c *User) PreSave() {
-	c.CreatedAt = util.GetMillis()
-	c.UpdatedAt = util.GetMillis()
+	c.Id = util.NewId()
+	c.CreatedTime = util.GetMillis()
+	c.UpdatedTime = util.GetMillis()
 }
 
 func (c *User) Update() {
-	c.UpdatedAt = util.GetMillis()
+	c.UpdatedTime = util.GetMillis()
 }
 
 func CreateUser(u *User) (*User, *util.Err) {

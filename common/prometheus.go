@@ -17,39 +17,39 @@ var (
 	DefaultMetricPath = "/metrics"
 
 	ResponseCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
-		Name: "smart-edu-server_requests_total",
+		Name: "smart_edu_server_requests_total",
 		Help: "Total request counts"}, []string{"method", "endpoint"})
 	ErrorCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
-		Name: "smart-edu-server_error_total",
+		Name: "smart_edu_server_error_total",
 		Help: "Total Error counts"}, []string{"method", "endpoint"})
 	ResponseLatency = prometheus.NewHistogramVec(prometheus.HistogramOpts{
-		Name:    "smart-edu-server_response_latency_millisecond",
+		Name:    "smart_edu_server_response_latency_millisecond",
 		Help:    "Response latency (millisecond)",
 		Buckets: historyBuckets[:]}, []string{"method", "endpoint"})
 
 	// CacheLatency : cache latency for promethues
 	CacheLatency = prometheus.NewHistogramVec(prometheus.HistogramOpts{
-		Name:    "smart-edu-server_cache_latency_millisecond",
+		Name:    "smart_edu_server_cache_latency_millisecond",
 		Help:    "cache latency (millisecond)",
 		Buckets: historyBuckets[:]}, []string{"method"})
 	// CacheCallCounter : cache counter for promethues
 	CacheCallCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
-		Name: "smart-edu-server_cache_total",
+		Name: "smart_edu_server_cache_total",
 		Help: "Total cache call counts"}, []string{"method"})
 	// CacheErrorCounter : cache error counter for promethues
 	CacheErrorCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
-		Name: "smart-edu-server_cache_error_total",
+		Name: "smart_edu_server_cache_error_total",
 		Help: "Total cache error counts"}, []string{"method"})
 
 	OfflineSpaceResponseCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
-		Name: "smart-edu-server_offline_space_requests_total",
+		Name: "smart_edu_server_offline_space_requests_total",
 		Help: "Total offline space request counts"}, []string{"method", "endpoint"})
 
 	OfflineSpaceErrorCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
-		Name: "smart-edu-server_offline_space_error_total",
+		Name: "smart_edu_server_offline_space_error_total",
 		Help: "Total offline space error counts"}, []string{"method", "endpoint"})
 	OfflineSpaceResponseLatency = prometheus.NewHistogramVec(prometheus.HistogramOpts{
-		Name:    "smart-edu-server_offline_space_response_latency_millisecond",
+		Name:    "smart_edu_server_offline_space_response_latency_millisecond",
 		Help:    "Offline space Response latency (millisecond)",
 		Buckets: historyBuckets[:]}, []string{"method", "endpoint"})
 )

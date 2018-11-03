@@ -1,4 +1,5 @@
 {
+    "FilePath":"./",	
     "LogSettings": {
         "EnableConsole": true,
         "ConsoleLevel": "DEBUG",
@@ -42,7 +43,7 @@
     "ReleaseMode":false,
     "SqlSettings": {
         "DriverName": "mysql",
-        "DataSource": "root:123456@tcp(127.0.0.1)/smart-edu-server?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s",
+        "DataSource": "root:123456@tcp(127.0.0.1)/smarteduserver?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s",
         "DataSourceReplicas": [],
         "DataSourceSearchReplicas": [],
         "MaxIdleConns": 20,

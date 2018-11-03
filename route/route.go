@@ -31,5 +31,7 @@ func NewRoute() *gin.Engine {
 	BaseRouter := &Router{root: router}
 	BaseRouter.InitPrometheus()
 	BaseRouter.InitConfig()
+	BaseRouter.InitUser()
+	BaseRouter.InitArticle()
 	return router
 }

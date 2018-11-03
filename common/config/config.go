@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"smart-edu-server/log"
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"smart-edu-server/log"
 	"strings"
 )
 
@@ -25,6 +25,7 @@ var (
 )
 
 type Config struct {
+	FilePath             string
 	ReleaseMode          bool
 	ServiceSettings      ServiceSettings
 	LogSettings          LogSettings
