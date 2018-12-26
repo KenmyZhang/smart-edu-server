@@ -3,7 +3,7 @@ package api
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"smart-edu-server/biz"
+	"github.com/KenmyZhang/smart-edu-server/biz"
 )
 
 func GetArticle(c *gin.Context) {

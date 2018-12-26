@@ -3,9 +3,9 @@ package api
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"smart-edu-server/biz"
-	"smart-edu-server/common/util"
-	"smart-edu-server/model"
+	"github.com/KenmyZhang/smart-edu-server/biz"
+	"github.com/KenmyZhang/smart-edu-server/common/util"
+	"github.com/KenmyZhang/smart-edu-server/model"
 )
 
 func GetUser(c *gin.Context) {

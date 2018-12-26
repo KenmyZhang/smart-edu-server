@@ -1,8 +1,8 @@
 package biz
 
 import (
-	"smart-edu-server/common/util"
-	"smart-edu-server/model"
+	"github.com/KenmyZhang/smart-edu-server/common/util"
+	"github.com/KenmyZhang/smart-edu-server/model"
 )
 
 func GetUser(userID string) (*model.User, *util.Err) {

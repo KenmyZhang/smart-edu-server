@@ -7,7 +7,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
-	"smart-edu-server/log"
+	"github.com/KenmyZhang/smart-edu-server/log"
 	"strings"
 )
 

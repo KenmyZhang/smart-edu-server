@@ -2,8 +2,8 @@ package model
 
 import (
 	"fmt"
-	"smart-edu-server/common/util"
-	"smart-edu-server/log"
+	"github.com/KenmyZhang/smart-edu-server/common/util"
+	"github.com/KenmyZhang/smart-edu-server/log"
 )
 
 type User struct {

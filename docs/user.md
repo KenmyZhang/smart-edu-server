@@ -2,7 +2,7 @@
 
 ### create user
 
-    curl -X POST "http://127.0.0.1:8089/smart-edu-server/user" -i -d '{"username":"kenmy","email":"hello@qq.com", "mobile":"1234324"}'
+    curl -X POST "http://127.0.0.1:8089/github.com/KenmyZhang/smart-edu-server/user" -i -d '{"username":"kenmy","email":"hello@qq.com", "mobile":"1234324"}'
         HTTP/1.1 200 OK
         Content-Type: application/json; charset=utf-8
         Date: Sun, 28 Oct 2018 05:10:52 GMT
@@ -27,7 +27,7 @@
 
 ### get user
 
-    curl -X GET "http://127.0.0.1:8089/smart-edu-server/user/otohsjux7bnc3bne5nqsettbko" -i -d '{"username":"kenmy","email":"hello@qq.com", "mobile":"1234324"}'
+    curl -X GET "http://127.0.0.1:8089/github.com/KenmyZhang/smart-edu-server/user/otohsjux7bnc3bne5nqsettbko" -i -d '{"username":"kenmy","email":"hello@qq.com", "mobile":"1234324"}'
         HTTP/1.1 200 OK
         Content-Type: application/json; charset=utf-8
         Date: Sun, 28 Oct 2018 05:19:03 GMT

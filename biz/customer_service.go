@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"smart-edu-server/common"
-	"smart-edu-server/common/config"
-	"smart-edu-server/common/util"
-	"smart-edu-server/log"
-	"smart-edu-server/model"
+	"github.com/KenmyZhang/smart-edu-server/common/config"
+	"github.com/KenmyZhang/smart-edu-server/common/util"
+	"github.com/KenmyZhang/smart-edu-server/log"
+	"github.com/KenmyZhang/smart-edu-server/model"
 	"strings"
 	"time"
+	"github.com/KenmyZhang/golang-lib/middleware"
 )
 
 const (
@@ -42,7 +42,7 @@ func SendMessage(msg *model.SendMsg) *util.Err {
 				end := time.Now()
 				latency := end.Sub(start)
 				log.Error(fmt.Sprintf("POST %s | %13v | timeout", SendMessageUrl, latency))
-				common.ErrorCounter.WithLabelValues("POST", SendMessageUrl).Inc()
+				middleware.ErrCounter.WithLabelValues("POST", SendMessageUrl).Inc()
 				log.Error("Sending message failed, " + err.Error())
 				return util.NewInternalServerError("biz.SendMessage", err.Error())
 			}

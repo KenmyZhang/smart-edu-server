@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"smart-edu-server/common/config"
-	"smart-edu-server/common/util"
+	"github.com/KenmyZhang/smart-edu-server/common/config"
+	"github.com/KenmyZhang/smart-edu-server/common/util"
 )
 
 func GetConfig(c *gin.Context) {

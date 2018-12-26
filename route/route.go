@@ -1,8 +1,8 @@
 package route
 
 import (
-	"smart-edu-server/common"
-	"smart-edu-server/common/config"
+	"github.com/KenmyZhang/smart-edu-server/common/config"
+	"github.com/KenmyZhang/golang-lib/middleware"
 
 	"github.com/gin-gonic/gin"
 )
@@ -24,9 +24,9 @@ func NewRoute() *gin.Engine {
 	} else {
 		gin.SetMode(gin.DebugMode)
 	}
-	router.Use(common.Logger(common.DefaultMetricPath))
-	router.Use(common.Prometheus())
-	router.Use(common.Recovery())
+	router.Use(middleware.Logger(middleware.DefaultMetricPath))
+	router.Use(middleware.Prometheus())
+	router.Use(middleware.Recovery())
 
 	BaseRouter := &Router{root: router}
 	BaseRouter.InitPrometheus()

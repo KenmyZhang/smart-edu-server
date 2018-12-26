@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"smart-edu-server/log"
+	"github.com/KenmyZhang/smart-edu-server/log"
 )
 
 func Logger(notLogged ...string) gin.HandlerFunc {

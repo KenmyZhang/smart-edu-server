@@ -8,9 +8,9 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
-	"smart-edu-server/common/config"
-	"smart-edu-server/common/util"
-	"smart-edu-server/log"
+	"github.com/KenmyZhang/smart-edu-server/common/config"
+	"github.com/KenmyZhang/smart-edu-server/common/util"
+	"github.com/KenmyZhang/smart-edu-server/log"
 )
 
 const (

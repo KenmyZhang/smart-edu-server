@@ -1,6 +1,6 @@
 package route
 
-import "smart-edu-server/api"
+import "github.com/KenmyZhang/smart-edu-server/api"
 
 func (r *Router) InitArticle() {
 	r.utils = r.root.Group("/smart-edu-server")

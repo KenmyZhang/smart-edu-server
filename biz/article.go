@@ -2,8 +2,8 @@ package biz
 
 import (
 	"io/ioutil"
-	"smart-edu-server/common/config"
-	"smart-edu-server/common/util"
+	"github.com/KenmyZhang/smart-edu-server/common/config"
+	"github.com/KenmyZhang/smart-edu-server/common/util"
 )
 
 func GetArticle(articleId string) ([]byte, *util.Err) {

@@ -1,10 +1,10 @@
 package route
 
 import (
-	"smart-edu-server/common"
+	"github.com/KenmyZhang/golang-lib/middleware"
 )
 
 func (r *Router) InitPrometheus() {
 	r.prometheus = r.root.Group("")
-	r.prometheus.GET(common.DefaultMetricPath, common.LatestMetrics)
+	r.prometheus.GET(middleware.DefaultMetricPath, middleware.GetMetrics)
 }

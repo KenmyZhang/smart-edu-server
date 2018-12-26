@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"smart-edu-server/app"
-	"smart-edu-server/common/util"
-	"smart-edu-server/log"
+	"github.com/KenmyZhang/smart-edu-server/app"
+	"github.com/KenmyZhang/smart-edu-server/common/util"
+	"github.com/KenmyZhang/smart-edu-server/log"
 )
 
 func main() {
