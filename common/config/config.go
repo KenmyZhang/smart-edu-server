@@ -33,6 +33,7 @@ type Config struct {
 	SqlSettings          *SqlSettings
 	RedisSettings        RedisSettings
 	WexinSettings        WexinSettings
+	MgoEndpoint          string
 	OfflineSpaceSettings OfflineSpaceSettings
 }
 

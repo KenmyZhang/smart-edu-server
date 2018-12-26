@@ -6,11 +6,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	_ "github.com/go-sql-driver/mysql"
-	"github.com/jinzhu/gorm"
 	"github.com/KenmyZhang/smart-edu-server/common/config"
 	"github.com/KenmyZhang/smart-edu-server/common/util"
 	"github.com/KenmyZhang/smart-edu-server/log"
+	"github.com/jinzhu/gorm"
 )
 
 const (

@@ -10,12 +10,14 @@ import (
 	"net/http"
 	"os"
 	"time"
+	"gopkg.in/mgo.v2"
 )
 
 type GracefulServer struct {
 	Server      *http.Server
 	Router      *gin.Engine
 	SqlSupplier *model.SqlSupplier
+	MgoSupplier *mgo.Session
 	Log         *log.Logger
 	Cfg         *config.Config
 }
@@ -28,6 +30,7 @@ func NewServer() *GracefulServer {
 	Srv.Log = log.NewLogger(Srv.Cfg.LoggerConfigFromLoggerConfig())
 	Srv.Router = route.NewRoute()
 	Srv.SqlSupplier = model.NewSqlSupplier(Srv.Cfg.SqlSettings)
+	Srv.MgoSupplier = model.NewMgoSupplier(Srv.Cfg.MgoEndpoint)
 	// 将golang中默认的 logger重定向到这个指定的server logger
 	log.RedirectStdLog(Srv.Log)
 	// 使用server logger 作为全局的logger

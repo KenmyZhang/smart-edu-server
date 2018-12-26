@@ -1,8 +1,8 @@
 package route
 
 import (
-	"github.com/KenmyZhang/smart-edu-server/common/config"
 	"github.com/KenmyZhang/golang-lib/middleware"
+	"github.com/KenmyZhang/smart-edu-server/common/config"
 
 	"github.com/gin-gonic/gin"
 )
@@ -33,5 +33,6 @@ func NewRoute() *gin.Engine {
 	BaseRouter.InitConfig()
 	BaseRouter.InitUser()
 	BaseRouter.InitArticle()
+	BaseRouter.InitQuestionManger()
 	return router
 }
