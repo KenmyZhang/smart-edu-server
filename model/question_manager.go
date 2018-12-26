@@ -12,6 +12,7 @@ type Question struct {
 	Answer         string   `json:"answer" 			bson:"answer"`
 	Option         []string `json:"option" 			bson:"option"`
 	Type           string   `json:"type"		    bson:"type"`
+	Analysis       string   `json:"analysis"        bson:"analysis"`
 	CreatedTime    int64    `json:"created_time"    bson:"created_time"`
 	UpdatedTime    int64    `json:"created_time"    bson:"updated_time"`
 }
