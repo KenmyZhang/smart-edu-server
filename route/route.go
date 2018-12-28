@@ -17,6 +17,15 @@ type Router struct {
 
 var BaseRouter *Router
 
+var allowedMethods []string = []string{
+	"POST",
+	"GET",
+	"OPTIONS",
+	"PUT",
+	"PATCH",
+	"DELETE",
+}
+
 func NewRoute() *gin.Engine {
 	router := gin.New()
 	if config.Cfg.ReleaseMode {
@@ -27,6 +36,7 @@ func NewRoute() *gin.Engine {
 	router.Use(middleware.Logger(middleware.DefaultMetricPath))
 	router.Use(middleware.Prometheus())
 	router.Use(middleware.Recovery())
+	router.Use(middleware.Cors(config.Cfg.AllowCorsFrom, allowedMethods))
 
 	BaseRouter := &Router{root: router}
 	BaseRouter.InitPrometheus()

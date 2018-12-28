@@ -1,6 +1,7 @@
 {
     "FilePath":"./",
     "MgoEndpoint":"/localhost",
+    "AllowCorsFrom":"*",
     "LogSettings": {
         "EnableConsole": true,
         "ConsoleLevel": "DEBUG",

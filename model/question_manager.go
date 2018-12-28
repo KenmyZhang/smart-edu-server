@@ -15,6 +15,7 @@ type Question struct {
 	Analysis       string   `json:"analysis"        bson:"analysis"`
 	CreatedTime    int64    `json:"created_time"    bson:"created_time"`
 	UpdatedTime    int64    `json:"created_time"    bson:"updated_time"`
+	DeletedTime    int64    `json:"deleted_time"    bson:"deleted_time"`
 }
 
 type QuestionList []Question
@@ -23,6 +24,7 @@ func (c *Question) PreSave() {
 	c.Id = util.NewId()
 	c.CreatedTime = util.GetMillis()
 	c.UpdatedTime = util.GetMillis()
+	c.DeletedTime = 0
 }
 
 func SaveQuestion(question *Question) *util.Err {

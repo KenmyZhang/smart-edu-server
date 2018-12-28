@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"github.com/KenmyZhang/smart-edu-server/log"
 	"io/ioutil"
 	"os"
 	"path/filepath"
-	"github.com/KenmyZhang/smart-edu-server/log"
 	"strings"
 )
 
@@ -34,6 +34,7 @@ type Config struct {
 	RedisSettings        RedisSettings
 	WexinSettings        WexinSettings
 	MgoEndpoint          string
+	AllowCorsFrom        string
 	OfflineSpaceSettings OfflineSpaceSettings
 }
 
