@@ -59,6 +59,11 @@ func InitCollectionTable(ss *SqlSupplier) {
 			panic(err)
 		}
 	}
+	if !ss.GetMaster().HasTable(&KnowledgePoint{}) {
+		if err := ss.GetMaster().Set("gorm:table_options", "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4").CreateTable(&KnowledgePoint{}).Error; err != nil {
+			panic(err)
+		}
+	}
 }
 
 func (ss *SqlSupplier) InitConnection() {

@@ -44,5 +44,6 @@ func NewRoute() *gin.Engine {
 	BaseRouter.InitUser()
 	BaseRouter.InitArticle()
 	BaseRouter.InitQuestionManger()
+	BaseRouter.InitKnowledgePoint()
 	return router
 }
