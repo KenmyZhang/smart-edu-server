@@ -8,7 +8,7 @@ import (
 
 type KnowledgePoint struct {
 	Id          string `json:"id"`
-	Label       string `json:"label"`
+	Label       string `json:"label" gorm:"type:varchar(100);unique_index:label_index"`
 	ParentId    string `json:"parent_id"`
 	CreatedTime int64  `json:"created_time"    bson:"created_time"`
 	UpdatedTime int64  `json:"created_time"    bson:"updated_time"`
@@ -16,8 +16,8 @@ type KnowledgePoint struct {
 }
 
 type MultiLevelKnowledgePoint struct {
-	Id       string                     `json:"id"`
-	Label    string                     `json:"label"`
+	Id       string             `json:"id"`
+	Label    string             `json:"label"`
 	Children KnowledgePointList `json:"children"`
 }
 
