@@ -43,12 +43,12 @@ func GetKnowlegePointById(c *gin.Context) {
 }
 
 func GetChildKnowledgePoints(c *gin.Context) {
-	knowledgePoint := &model.KnowledgePoint{}
-	if c.BindJSON(knowledgePoint) != nil {
-		c.JSON(http.StatusOK, util.NewInvalidParamError(util.InvalidParam, "api.GetChildKnowledgePoints", "input params", "invalid json body"))
+	knodwledgeID := c.Query("knowledge_id")
+	if knodwledgeID == "" {
+		c.JSON(http.StatusOK, util.NewInvalidParamError(util.InvalidParam, "api.GetChildKnowledgePoints", "knowledge_id", `collection_id can not be ""`))
 		return
 	}
-	if list, err := biz.GetChildKnowledgePoints(knowledgePoint.Id); err != nil {
+	if list, err := biz.GetChildKnowledgePoints(knodwledgeID); err != nil {
 		c.JSON(http.StatusOK, err)
 		return
 	} else {
@@ -60,12 +60,12 @@ func GetChildKnowledgePoints(c *gin.Context) {
 }
 
 func GetChildKnowledgePointAndChild(c *gin.Context) {
-	knowledgePoint := &model.KnowledgePoint{}
-	if c.BindJSON(knowledgePoint) != nil {
-		c.JSON(http.StatusOK, util.NewInvalidParamError(util.InvalidParam, "api.GetChildKnowledgePoints", "input params", "invalid json body"))
+	knodwledgeID := c.Query("knowledge_id")
+	if knodwledgeID == "" {
+		c.JSON(http.StatusOK, util.NewInvalidParamError(util.InvalidParam, "api.GetChildKnowledgePointAndChild", "knowledge_id", `collection_id can not be ""`))
 		return
 	}
-	if list, err := biz.GetChildKnowledgePointAndChild(knowledgePoint.Id); err != nil {
+	if list, err := biz.GetChildKnowledgePointAndChild(knodwledgeID); err != nil {
 		c.JSON(http.StatusOK, err)
 		return
 	} else {

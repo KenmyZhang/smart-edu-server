@@ -42,7 +42,13 @@ func GetChildKnowledgePointAndChild(id string) (*model.MultiLevelKnowledgePoint,
 	if list, err := model.GetChildKnowledgePoints(id); err != nil {
 		return nil, err
 	} else {
-		multiLevelKnowledgePoint.Children = append(multiLevelKnowledgePoint.Children, *list...)
+		for _, item := range *list {
+			knowledgePoint := &model.MultiLevelKnowledgePoint{}
+			knowledgePoint.Id = item.Id
+			knowledgePoint.Label = item.Label
+			knowledgePoint.ParentId = item.ParentId
+			multiLevelKnowledgePoint.Children = append(multiLevelKnowledgePoint.Children, *knowledgePoint)
+		}
 		return multiLevelKnowledgePoint, nil
 	}
 }

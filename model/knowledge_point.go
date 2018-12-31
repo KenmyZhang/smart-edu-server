@@ -16,12 +16,13 @@ type KnowledgePoint struct {
 }
 
 type MultiLevelKnowledgePoint struct {
-	Id       string             `json:"id"`
-	Label    string             `json:"label"`
-	Children KnowledgePointList `json:"children"`
+	Id       string                     `json:"id"`
+	Label    string                     `json:"label"`
+	ParentId string                     `json:"parent_id"`
+	Children []MultiLevelKnowledgePoint `json:"children,omitempty"`
 }
 
-type KnowledgePointList []MultiLevelKnowledgePoint
+type KnowledgePointList []KnowledgePoint
 
 func (c *KnowledgePoint) PreSave() {
 	c.Id = util.NewId()
